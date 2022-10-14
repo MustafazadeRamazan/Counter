@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Counter</title>
+        <link rel="stylesheet" href="counter.css">
+    </head>
+
+    <body>
+
+        <div class="clock">
+
+            <div class="time">
+                Press Start Button
+            </div>
+
+            <div class="controls">
+                <button id="start" onclick="start()">Start</button>
+                <button id="stop" onclick="stop()">Stop</button>
+                <button id="reset" onclick="reset()">Reset</button>
+            </div>
+
+        </div>
+        
+        <script>
+            let seconds = 0;
+            let interval = null;
+
+            const time_e = document.querySelector(".clock .time");
+
+            function timer()
+            {
+                seconds++;
+
+                let hours = Math.floor(seconds / 3600);
+                let mins = Math.floor((seconds - (hours * 3600)) / 60);
+                let secs = seconds % 60;
+
+                if (secs < 10) secs = '0' + secs;
+                if (mins < 10) mins = '0' + mins;
+                if (hours < 10) hours = '0' + hours;
+
+                time_e.innerText = `${hours}:${mins}:${secs}`;
+            }
+
+            function stop()
+            {
+                clearInterval(interval);
+                interval = null;
+            }
+
+            function reset() 
+            {
+                stop();
+                seconds = 0;
+                time_e.innerText = "00:00:00";
+            }
+
+            function start()
+            {
+                if (interval)
+                {
+                    return;
+                }
+
+
+                interval = setInterval(timer, 1000);
+            }
+
+        </script>
+
+    </body>
+
+</html>

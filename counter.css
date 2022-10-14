@@ -1,0 +1,60 @@
+:root
+{
+    --light: #F3F4F6;
+}
+
+
+
+body
+{
+    background: #000000;
+    color: var(--light);
+}
+
+.clock
+{
+    text-align: center;
+    background-color: #123500;
+    width: 100%;
+    max-width: 360px;
+    margin: 17rem auto;
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+}
+
+.time
+{
+    font-size: 5rem;
+    font-weight: 300;
+    margin-bottom: 1rem;
+}
+
+.controls
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.controls button
+{
+    cursor: pointer;
+    color: var(--light);
+    font-size: 1.125rem;
+    background-color: green;
+    margin:0 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+
+    transition: 0.4s;
+}
+
+button:hover
+{
+    opacity: 0.7;
+}
+
+button:active
+{
+    background-color: #ffffff;
+}
